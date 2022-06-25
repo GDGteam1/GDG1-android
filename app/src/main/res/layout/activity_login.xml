@@ -12,13 +12,42 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="269dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="시작하려면"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="#414141"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="300dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="이름"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="#52C41A"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/nameEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="38dp"
-            android:text="이름을 알려주세요"
+            android:layout_marginStart="68.5dp"
+            android:layout_marginTop="300dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="이 필요해요"
             android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="#414141"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,10 +55,15 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="이름을 입력하세요."
             android:inputType="text"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="28dp"
+            android:background="@drawable/login_editview"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
@@ -37,12 +71,18 @@
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="28dp"
-            android:clickable="false"
-            android:text="로그인"
-            android:backgroundTint="#B9B7BD"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/login_button_item"
+            android:fontFamily="@font/noto_sans"
+            android:paddingTop="20.5dp"
+            android:paddingBottom="20.5dp"
+            android:text="시작하기"
+            android:textColor="@color/white"
+            android:textSize="18.5dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText" />
 

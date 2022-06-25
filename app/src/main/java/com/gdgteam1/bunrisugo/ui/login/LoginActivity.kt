@@ -24,9 +24,19 @@ class LoginActivity : AppCompatActivity() {
             lifecycleOwner = this@LoginActivity
         }
 
-        binding.nameEditText.addTextChangedListener(object: TextWatcher {
+        binding.loginButton.setOnClickListener {
+            if (binding.editText.text.toString().isNotEmpty()) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+            else {
+                Toast.makeText(this, "이름을 입력해주세요!", Toast.LENGTH_SHORT).show()
+            }
+        }
+        /*
+        binding.editText.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                if (binding.nameEditText.text.toString().length > 0) {
+                if (binding.editText.text.toString().length > 0) {
                     binding.loginButton.isClickable = true
                     binding.loginButton.setBackgroundColor(Color.BLUE);
                 } else {
@@ -36,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                TODO("Not yet implemented")
+
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -47,21 +57,7 @@ class LoginActivity : AppCompatActivity() {
                     binding.loginButton.isClickable = true
                     binding.loginButton.setBackgroundColor(Color.GRAY)
                 }
-            }
-
-        /*binding.loginButton.setOnClickListener {
-
-        })*/
-            /*
-            if (binding.nameEditText.text.toString().isNotEmpty()) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
-            else {
-                Toast.makeText(this, "이름을 입력해주세요!", Toast.LENGTH_SHORT).show()
-            }
-             */
-        })
+            }*/
 
     }
 
