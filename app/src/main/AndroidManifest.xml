@@ -13,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bunrisugo">
         <activity
-            android:name=".ui.guide.GuideActivity"
+            android:name=".ui.badge.BadgeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:usesCleartextTraffic="true">
             <intent-filter>
@@ -28,16 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.gdgteam1.bunrisugo.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/path" />
-        </provider>
     </application>
 
 </manifest>
