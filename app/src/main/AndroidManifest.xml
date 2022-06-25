@@ -21,6 +21,8 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />
+        <activity android:name=".ui.guide.GuideActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"

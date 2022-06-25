@@ -5,10 +5,12 @@
       <map>
         <entry key="app/src/main/res/drawable/bg_item.xml" value="0.127" />
         <entry key="app/src/main/res/drawable/rect_10.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rect_10_enable.xml" value="0.127" />
         <entry key="app/src/main/res/layout/activity_guide.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_badge.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.17326239986696107" />
+        <entry key="app/src/main/res/layout/item_guide.xml" value="0.21770833333333334" />
         <entry key="app/src/main/res/xml/path.xml" value="0.22056159420289856" />
       </map>
     </option>

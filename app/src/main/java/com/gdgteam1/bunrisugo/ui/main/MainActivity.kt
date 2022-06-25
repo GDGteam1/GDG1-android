@@ -1,5 +1,6 @@
 package com.gdgteam1.bunrisugo.ui.main
 
+import android.content.Intent
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
@@ -12,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import com.gdgteam1.bunrisugo.R
 import com.gdgteam1.bunrisugo.data.remote.DataSource
 import com.gdgteam1.bunrisugo.databinding.ActivityMainBinding
+import com.gdgteam1.bunrisugo.ui.guide.GuideActivity
 import java.io.File
 
 
@@ -59,7 +61,12 @@ class MainActivity : AppCompatActivity() {
         if (it) {
             uri.let { uri ->
                 val bitmap = ImageDecoder.decodeBitmap(ImageDecoder.createSource(contentResolver, uri))
-                binding.ivLogo.setImageBitmap(bitmap)
+//                binding.ivLogo.setImageBitmap(bitmap)
+                startActivity(
+                    Intent(this, GuideActivity::class.java).apply {
+
+                    }
+                )
             }
 
 //            val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(c.getContentResolver(), Uri.parse(imageUri))

@@ -6,39 +6,89 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/gray_0"
         tools:context=".ui.guide.GuideActivity">
 
-<!--        <ImageView-->
-<!--            android:id="@+id/iv_logo"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:src="@mipmap/ic_launcher"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"/>-->
+        <TextView
+            android:id="@+id/tv_trash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="24dp"
+            android:text="페트병"
+            android:textColor="@color/primary_6"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/tv_hi"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/iv_logo"-->
-<!--            app:layout_constraintStart_toStartOf="@id/iv_logo"-->
-<!--            android:text="해커톤님\n분리수거를 시작해보세요."/>-->
+        <TextView
+            android:id="@+id/tv_trash_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/tv_trash"
+            app:layout_constraintStart_toEndOf="@id/tv_trash"
+            android:text="은 이렇게 버려야해요"
+            android:textColor="@color/gray_8"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/tv_hi"-->
-<!--            app:layout_constraintStart_toStartOf="@id/iv_logo"/>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_guide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_guide"
+            app:layout_constraintTop_toBottomOf="@id/tv_trash"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bg_btn"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/tv_recent_badge"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="최근 얻은 배지"-->
-<!--            app:layout_constraintTop_toBottomOf=""/>-->
+        <View
+            android:id="@+id/bg_btn"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:background="@color/gray_0"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:background="@drawable/rect_10_enable"
+            android:text="홈 화면으로"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/gray_6"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_retry"/>
+
+        <TextView
+            android:id="@+id/btn_retry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="15dp"
+            android:background="@drawable/rect_10"
+            android:gravity="center"
+            android:text="다른 사진 찍기"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/gray_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_home"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
