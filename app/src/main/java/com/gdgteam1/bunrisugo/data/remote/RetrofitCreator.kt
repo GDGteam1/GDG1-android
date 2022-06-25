@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitCreator {
     companion object {
-        private const val baseUrl = "https://dapi.kakao.com/v2/"
+        private const val baseUrl = "http://172.20.66.214:8080/"
 
         fun createRetrofit(): Retrofit {
             return Retrofit.Builder()

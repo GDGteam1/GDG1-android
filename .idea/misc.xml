@@ -3,13 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/android-sdk/AndroidStudioProjects/GDG1-android/app/src/main/res/drawable/badge_item_shape.xml" value="0.16666666666666666" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/GDG1-android/app/src/main/res/drawable/splash.xml" value="0.113" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/GDG1-android/app/src/main/res/layout/activity_badge.xml" value="0.3755186721991701" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/GDG1-android/app/src/main/res/layout/activity_login.xml" value="0.16097560975609757" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/GDG1-android/app/src/main/res/layout/activity_main.xml" value="0.1539855072463768" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/GDG1-android/app/src/main/res/layout/activity_splash.xml" value="0.22" />
-        <entry key="..\:/android-sdk/AndroidStudioProjects/GDG1-android/app/src/main/res/layout/item_badge.xml" value="0.16621376811594202" />
+        <entry key="app/src/main/res/drawable/bg_item.xml" value="0.127" />
+        <entry key="app/src/main/res/drawable/rect_10.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_guide.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_badge.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/item_category.xml" value="0.17326239986696107" />
+        <entry key="app/src/main/res/xml/path.xml" value="0.22056159420289856" />
       </map>
     </option>
   </component>

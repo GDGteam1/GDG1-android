@@ -1,14 +1,27 @@
 package com.gdgteam1.bunrisugo.data.remote
 
-import android.app.appsearch.SearchResult
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Query
+import com.gdgteam1.bunrisugo.data.remote.model.ResponseBadge
+import com.gdgteam1.bunrisugo.data.remote.model.ResponseCategory
+import com.gdgteam1.bunrisugo.data.remote.model.ResponseStep
+import okhttp3.MultipartBody
+import retrofit2.http.*
 
 interface Bunrisugo {
-//    @GET("search/image")
-//    suspend fun getSearchResult(@Header("Authorization") apiKey: String = "KakaoAK 08bc8f13aa488f85b1d1bd31070523cb",
-//                                @Query("query") searchString: String,
-//                                @Query("size") size: Int,
-//                                @Query("page") page: Int): SearchResult
+    @GET("user/badges/recent")
+    suspend fun getRecentBadgeList(@Query("userId") userId: Int = 1,
+                                   @Query("size") size: Int = 3): ResponseBadge
+
+    @GET("user/categories/recent")
+    suspend fun getRecentCategoryList(@Query("userId") userId: Int = 1,
+                                      @Query("size") size: Int = 4): ResponseCategory
+
+    @GET("user/badges/all")
+    suspend fun getAllBadgeList(@Query("userId") userId: Int = 1): ResponseBadge
+
+    @GET("user/categories/all")
+    suspend fun getAllCategoryList(@Query("userId") userId: Int = 1): ResponseCategory
+
+    @Multipart
+    @POST("image-detect")
+    suspend fun getGuide(@Part file: MultipartBody.Part): ResponseStep
 }
