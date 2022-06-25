@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.gdgteam1.bunrisugo.R
 import com.gdgteam1.bunrisugo.data.remote.DataSource
 import com.gdgteam1.bunrisugo.databinding.ActivitySplashBinding
-import com.gdgteam1.bunrisugo.ui.main.MainActivity
+import com.gdgteam1.bunrisugo.ui.login.LoginActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -26,7 +26,7 @@ class SplashActivity : AppCompatActivity() {
         lifecycleScope.launch {
 //            dataSource.getRecentBadgeList()
             delay(1000)
-            val intent = Intent(applicationContext, MainActivity::class.java)
+            val intent = Intent(applicationContext, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
