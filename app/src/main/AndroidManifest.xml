@@ -13,10 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bunrisugo">
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name=".ui.badge.BadgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:usesCleartextTraffic="true">
             <intent-filter>
