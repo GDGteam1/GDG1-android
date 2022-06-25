@@ -13,6 +13,8 @@ import androidx.databinding.DataBindingUtil
 import com.gdgteam1.bunrisugo.R
 import com.gdgteam1.bunrisugo.data.remote.DataSource
 import com.gdgteam1.bunrisugo.databinding.ActivityMainBinding
+import com.gdgteam1.bunrisugo.ui.badge.BadgeActivity
+import com.gdgteam1.bunrisugo.ui.category.CategoryActivity
 import com.gdgteam1.bunrisugo.ui.guide.GuideActivity
 import java.io.File
 
@@ -37,6 +39,20 @@ class MainActivity : AppCompatActivity() {
 //        val file = File(filesDir, "cameraImg")
 //        val uri: Uri = FileProvider.getUriForFile(this, applicationContext.packageName + ".provider", file)
 
+        binding.showAllBadge.setOnClickListener {
+            startActivity(
+                Intent(this, BadgeActivity::class.java).apply {
+                }
+            )
+        }
+
+        binding.showAllBunri.setOnClickListener {
+            startActivity(
+                Intent(this, CategoryActivity::class.java).apply {
+
+                }
+            )
+        }
 
         binding.btnStart.setOnClickListener {
             uri = initUri()

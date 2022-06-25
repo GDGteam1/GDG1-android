@@ -7,9 +7,8 @@ import okhttp3.MultipartBody
 import retrofit2.http.*
 
 interface Bunrisugo {
-    @GET("user/badges/recent")
-    suspend fun getRecentBadgeList(@Query("userId") userId: Int = 1,
-                                   @Query("size") size: Int = 3): ResponseBadge
+    @GET("user/badges/recent/1")
+    suspend fun getRecentBadgeList(): ResponseBadge
 
     @GET("user/categories/recent")
     suspend fun getRecentCategoryList(@Query("userId") userId: Int = 1,
