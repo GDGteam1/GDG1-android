@@ -12,6 +12,8 @@ import androidx.core.content.FileProvider
 import androidx.databinding.DataBindingUtil
 import com.gdgteam1.bunrisugo.R
 import com.gdgteam1.bunrisugo.data.remote.DataSource
+import com.gdgteam1.bunrisugo.data.remote.model.Badge
+import com.gdgteam1.bunrisugo.data.remote.model.Category
 import com.gdgteam1.bunrisugo.databinding.ActivityMainBinding
 import com.gdgteam1.bunrisugo.ui.badge.BadgeActivity
 import com.gdgteam1.bunrisugo.ui.category.CategoryActivity
@@ -34,6 +36,15 @@ class MainActivity : AppCompatActivity() {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main).apply {
             binding = this
             lifecycleOwner = this@MainActivity
+        }
+
+        val isReturn = intent.getStringExtra("test")
+
+        if (!isReturn.isNullOrEmpty()) {
+            badgeAdapter.setItems(arrayListOf(Badge(2, "플라스틱 여왕", R.drawable.ic_pet, "플라스틱 분리수거 방법을 배우셨군요", true)))
+            badgeAdapter.notifyDataSetChanged()
+            categoryAdapter.setItems(arrayListOf(Category(2, R.drawable.ic_pet, "페트병", true)))
+            categoryAdapter.notifyDataSetChanged()
         }
 
 //        val file = File(filesDir, "cameraImg")

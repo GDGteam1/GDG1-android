@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.gdgteam1.bunrisugo.R
+import com.gdgteam1.bunrisugo.data.remote.model.Category
 import com.gdgteam1.bunrisugo.databinding.ItemCategoryBinding
 
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
-    private val items = arrayListOf<Any>(1, 2, 3, 4, 5)
-    fun setItems(items: ArrayList<Any>) {
+    private val items = arrayListOf<Category>(Category(1, R.drawable.ic_empty, "얻은게 없어요", true))
+    fun setItems(items: ArrayList<Category>) {
         this.items.clear()
         this.items.addAll(items)
     }
@@ -22,7 +23,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.bind()
+        holder.bind(items[position])
     }
 
     override fun getItemCount(): Int = items.size
@@ -36,7 +37,9 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
                 else -> layoutParams.setMargins(0, 0, 10.dp, 0)
             }
         }
-        fun bind() {
+        fun bind(category: Category) {
+            binding.category = category
+            binding.ivImage.setImageResource(category.iconUrl)
             setViewHolderMargin()
         }
     }

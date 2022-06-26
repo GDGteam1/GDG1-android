@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.gdgteam1.bunrisugo.R
+import com.gdgteam1.bunrisugo.data.remote.model.Badge
 import com.gdgteam1.bunrisugo.databinding.ItemBadgeBinding
 
 class BadgeAdapter : RecyclerView.Adapter<BadgeAdapter.BadgeViewHolder>() {
 
-    private val items = arrayListOf<Any>(1, 2, 3, 4, 5)
-    fun setItems(items: ArrayList<Any>) {
+    private val items = arrayListOf<Badge>(Badge(1, "얻은 뱃지가 없어요", R.drawable.ic_empty, "분리수거를 시작해보세요", true))
+    fun setItems(items: ArrayList<Badge>) {
         this.items.clear()
         this.items.addAll(items)
     }
@@ -23,7 +24,7 @@ class BadgeAdapter : RecyclerView.Adapter<BadgeAdapter.BadgeViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: BadgeViewHolder, position: Int) {
-        holder.bind()
+        holder.bind(items[position])
     }
 
     override fun getItemCount(): Int = items.size
@@ -37,7 +38,9 @@ class BadgeAdapter : RecyclerView.Adapter<BadgeAdapter.BadgeViewHolder>() {
                 else -> layoutParams.setMargins(0, 0, 10.dp, 0)
             }
         }
-        fun bind() {
+        fun bind(badge: Badge) {
+            binding.badge = badge
+            binding.ivImage.setImageResource(badge.badgeIconUrl)
             setViewHolderMargin()
         }
     }

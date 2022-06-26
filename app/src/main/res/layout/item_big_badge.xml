@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="badge"
+            type="com.gdgteam1.bunrisugo.data.remote.model.Badge" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/bg_item_2">
+        android:background="@{badge.isActive ? @drawable/bg_item_2 : @drawable/bg_item_3}">
 
         <ImageView
             android:id="@+id/iv_image"
@@ -26,7 +28,7 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="타이틀"
+            android:text="@{badge.badgeName}"
             android:textStyle="bold"
             android:textSize="16dp"
             android:textColor="@color/gray_8"
@@ -39,9 +41,8 @@
             android:id="@+id/tv_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="설명설명설명"
-            android:textStyle="bold"
-            android:textSize="16dp"
+            android:text="@{badge.badgeCondition}"
+            android:textSize="14dp"
             android:textColor="@color/gray_6"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="24dp"

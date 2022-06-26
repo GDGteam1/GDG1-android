@@ -5,12 +5,29 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.gdgteam1.bunrisugo.R
+import com.gdgteam1.bunrisugo.data.remote.model.Category
 import com.gdgteam1.bunrisugo.databinding.ItemBigCategoryBinding
 
 class BigCategoryAdapter : RecyclerView.Adapter<BigCategoryAdapter.BigCategoryViewHolder>() {
 
-    private val items = arrayListOf<Any>(1, 2, 3, 4, 5, 6,6,6,6,6,6,6,6,6,6)
-    fun setItems(items: ArrayList<Any>) {
+    private val items = arrayListOf<Category>(
+        Category(1, R.drawable.ic_pet, "페트병", true),
+        Category(1, R.drawable.ic_bottle, "유리병", false),
+        Category(1, R.drawable.ic_can, "캔류", false),
+        Category(1, R.drawable.ic_qwer, "비닐", false),
+        Category(1, R.drawable.ic_pet, "페트병", false),
+        Category(1, R.drawable.ic_bottle, "유리병", false),
+        Category(1, R.drawable.ic_can, "캔류", false),
+        Category(1, R.drawable.ic_qwer, "비닐", false),
+        Category(1, R.drawable.ic_pet, "페트병", false),
+        Category(1, R.drawable.ic_bottle, "유리병", false),
+        Category(1, R.drawable.ic_can, "캔류", false),
+        Category(1, R.drawable.ic_qwer, "비닐", false),
+        Category(1, R.drawable.ic_pet, "페트병", false),
+        Category(1, R.drawable.ic_bottle, "유리병", false),
+        Category(1, R.drawable.ic_can, "캔류", false)
+    )
+    fun setItems(items: ArrayList<Category>) {
         this.items.clear()
         this.items.addAll(items)
     }
@@ -22,13 +39,15 @@ class BigCategoryAdapter : RecyclerView.Adapter<BigCategoryAdapter.BigCategoryVi
     }
 
     override fun onBindViewHolder(holder: BigCategoryViewHolder, position: Int) {
-        holder.bind()
+        holder.bind(items[position])
     }
 
     override fun getItemCount(): Int = items.size
 
     inner class BigCategoryViewHolder(private val binding: ItemBigCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind() {
+        fun bind(category: Category) {
+            binding.category = category
+            binding.ivImage.setImageResource(category.iconUrl)
         }
     }
 

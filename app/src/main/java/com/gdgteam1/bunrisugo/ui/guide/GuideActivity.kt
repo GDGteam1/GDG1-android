@@ -12,6 +12,7 @@ import androidx.core.content.FileProvider
 import androidx.databinding.DataBindingUtil
 import com.gdgteam1.bunrisugo.R
 import com.gdgteam1.bunrisugo.databinding.ActivityGuideBinding
+import com.gdgteam1.bunrisugo.ui.main.MainActivity
 import java.io.File
 
 class GuideActivity : AppCompatActivity() {
@@ -30,7 +31,9 @@ class GuideActivity : AppCompatActivity() {
         binding.rvGuide.adapter = guideAdapter
 
         binding.btnHome.setOnClickListener {
-            finish()
+            startActivity(Intent(this, MainActivity::class.java).apply {
+                putExtra("test", "go")
+            })
         }
 
         binding.btnRetry.setOnClickListener {
